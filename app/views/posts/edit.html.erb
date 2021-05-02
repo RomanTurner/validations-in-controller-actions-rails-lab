@@ -1,14 +1,5 @@
 <h2>Editing "<%= @post.title %>"</h2>
-<% if flash[:error] %>
-    <div id="error_explanation">
-      <h2><%= pluralize(flash[:error].count, "error") %> prohibited this task from being saved:</h2>
-      <ul>
-      <% flash[:error].each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render "partials/error"%>
 
 <%= form_tag post_path(@post), method: "patch" do %>
   <div class="field">
